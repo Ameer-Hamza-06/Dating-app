@@ -13,4 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/users", userRoutes);
 app.use(errorHandler);
 
+app.get("/", (req, res) => {
+  res.send("Api is Working!");
+});
 app.listen(port, () => console.log(`Server is started at ${port}`));
