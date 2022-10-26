@@ -17,11 +17,19 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Enter Your Email"],
     },
+    role: {
+      type: String,
+      enum: ["admin", "client"],
+      default: "client",
+    },
     password: String,
     image_key: String,
     image_url: String,
     images: [Object],
-    active: Boolean,
+    active: {
+      type: Boolean,
+      default: true,
+    },
   },
   {
     timestamps: true,
